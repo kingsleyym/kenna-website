@@ -18,25 +18,32 @@ interface ServiceCardsProps {
 
 export default function ServiceCards({ services }: ServiceCardsProps) {
   return (
-    <section className="py-16 md:py-24" style={{ backgroundColor: 'rgb(245 243 238)' }}>
+    <section className="py-24 md:py-32 bg-primary-50">
       <Container>
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium mb-4 text-gray-900">
+          <h2 className="text-h2 mb-4 text-dark-700">
             Maßgeschneidert für Ihren Erfolg
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             Wählen Sie das Paket, das am besten zu Ihren Bedürfnissen passt
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
           {services.map((service, index) => (
-            <Card key={service.id} className={`flex flex-col ${index === 1 ? 'border-2 border-[rgb(255,107,107)] shadow-xl' : ''}`}>
+            <Card 
+              key={service.id} 
+              className={`flex flex-col transition-all duration-300 hover:scale-105 hover:shadow-2xl ${
+                index === 1 
+                  ? 'border-2 border-accent-400 shadow-xl bg-white/90 backdrop-blur-sm' 
+                  : 'bg-white/80 backdrop-blur-sm border border-primary-200'
+              }`}
+            >
               <CardHeader>
-                <div className="w-full aspect-video bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
+                <div className="w-full aspect-video bg-gradient-to-br from-primary-100 to-primary-200 rounded-lg mb-4 flex items-center justify-center">
                   <span className="text-gray-400 text-sm">Paket Icon</span>
                 </div>
                 <CardTitle className="text-2xl">{service.title}</CardTitle>
-                <CardDescription className="text-xl font-semibold mt-2" style={{ color: 'rgb(255 107 107)' }}>
+                <CardDescription className="text-xl font-semibold mt-2 text-accent-400">
                   {service.price}
                 </CardDescription>
               </CardHeader>
@@ -44,7 +51,7 @@ export default function ServiceCards({ services }: ServiceCardsProps) {
                 <ul className="space-y-3">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-2">
-                      <Check className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: 'rgb(255 107 107)' }} />
+                      <Check className="w-5 h-5 flex-shrink-0 mt-0.5 text-accent-400" />
                       <span className="text-sm text-gray-700">{feature}</span>
                     </li>
                   ))}

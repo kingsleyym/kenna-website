@@ -1,20 +1,34 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [leistungenOpen, setLeistungenOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+    <header className={`sticky top-0 z-50 transition-all duration-300 border-b ${
+      scrolled 
+        ? 'bg-white/80 backdrop-blur-xl border-gray-200 shadow-sm' 
+        : 'bg-transparent backdrop-blur-none border-transparent'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="text-2xl font-bold" style={{ color: 'rgb(255 107 107)' }}>
+          <Link href="/" className="text-2xl font-bold text-accent-400 hover:text-accent-500 transition-colors">
             Kenna
           </Link>
 
@@ -26,7 +40,7 @@ export default function Header() {
               onMouseEnter={() => setLeistungenOpen(true)}
               onMouseLeave={() => setLeistungenOpen(false)}
             >
-              <button className="flex items-center gap-1 text-gray-700 hover:text-[rgb(255,107,107)] transition-colors">
+              <button className="flex items-center gap-1 text-gray-700 hover:text-accent-400 transition-colors">
                 Leistungen <ChevronDown className="w-4 h-4" />
               </button>
               {leistungenOpen && (
@@ -53,16 +67,16 @@ export default function Header() {
               )}
             </div>
 
-            <Link href="/prozess" className="text-gray-700 hover:text-[rgb(255,107,107)] transition-colors">
+            <Link href="/prozess" className="text-gray-700 hover:text-accent-400 transition-colors">
               Prozess
             </Link>
-            <Link href="/preise" className="text-gray-700 hover:text-[rgb(255,107,107)] transition-colors">
+            <Link href="/preise" className="text-gray-700 hover:text-accent-400 transition-colors">
               Preise
             </Link>
-            <Link href="/ueber-uns" className="text-gray-700 hover:text-[rgb(255,107,107)] transition-colors">
+            <Link href="/ueber-uns" className="text-gray-700 hover:text-accent-400 transition-colors">
               Über uns
             </Link>
-            <Link href="/blog" className="text-gray-700 hover:text-[rgb(255,107,107)] transition-colors">
+            <Link href="/blog" className="text-gray-700 hover:text-accent-400 transition-colors">
               Blog
             </Link>
           </nav>
@@ -87,19 +101,19 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-200">
           <nav className="px-4 py-4 space-y-4">
-            <Link href="/leistungen" className="block text-gray-700 hover:text-[rgb(255,107,107)]">
+            <Link href="/leistungen" className="block text-gray-700 hover:text-accent-400">
               Leistungen
             </Link>
-            <Link href="/prozess" className="block text-gray-700 hover:text-[rgb(255,107,107)]">
+            <Link href="/prozess" className="block text-gray-700 hover:text-accent-400">
               Prozess
             </Link>
-            <Link href="/preise" className="block text-gray-700 hover:text-[rgb(255,107,107)]">
+            <Link href="/preise" className="block text-gray-700 hover:text-accent-400">
               Preise
             </Link>
-            <Link href="/ueber-uns" className="block text-gray-700 hover:text-[rgb(255,107,107)]">
+            <Link href="/ueber-uns" className="block text-gray-700 hover:text-accent-400">
               Über uns
             </Link>
-            <Link href="/blog" className="block text-gray-700 hover:text-[rgb(255,107,107)]">
+            <Link href="/blog" className="block text-gray-700 hover:text-accent-400">
               Blog
             </Link>
             <Link href="/kontakt">
