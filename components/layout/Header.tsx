@@ -20,7 +20,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`sticky top-0 z-50 transition-all duration-300 border-b ${
+    <header className={`fixed top-0 z-50 w-full transition-all duration-300 border-b ${
       scrolled 
         ? 'bg-white/80 backdrop-blur-xl border-gray-200 shadow-sm' 
         : 'bg-transparent backdrop-blur-none border-transparent'

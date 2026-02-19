@@ -19,7 +19,7 @@ export default function HeroSection({
   ctaSecondary,
 }: HeroSectionProps) {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-x-hidden py-24 md:py-32 bg-primary-100">
+    <section className="relative z-0 min-h-screen flex items-center justify-center overflow-x-hidden py-24 md:py-32 bg-primary-100">
       
       {/* Floating Images + Testimonials (DAHINTER + DAVOR) */}
       <div className="absolute inset-0 z-0">

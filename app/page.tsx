@@ -1,4 +1,5 @@
 import HeroSection from "@/components/sections/HeroSection";
+import DashboardSection from "@/components/sections/DashboardSection";
 import ProblemStatement from "@/components/sections/ProblemStatement";
 import ProcessSteps from "@/components/sections/ProcessSteps";
 import ServiceCards from "@/components/sections/ServiceCards";
@@ -17,6 +18,8 @@ export default function HomePage() {
         ctaPrimary={{ text: "Jetzt Paket wählen", href: "#pakete" }}
         ctaSecondary={{ text: "Mehr erfahren", href: "/prozess" }}
       />
+      
+      <DashboardSection />
       
       
         <ProblemStatement />
