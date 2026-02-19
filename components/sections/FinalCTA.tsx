@@ -14,11 +14,11 @@ export default function FinalCTA({ headline, subheadline, ctaText, ctaHref }: Fi
     <section className="py-20 md:py-32" style={{ backgroundColor: 'rgb(255 107 107)' }}>
       <Container>
         <div className="text-center text-white">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium mb-6">
+          <h2 className="text-h2 text-white mb-6">
             {headline}
           </h2>
           {subheadline && (
-            <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-white/90">
+            <p className="text-body-lg mb-8 max-w-2xl mx-auto text-white/90">
               {subheadline}
             </p>
           )}

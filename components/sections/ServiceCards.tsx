@@ -24,7 +24,7 @@ export default function ServiceCards({ services }: ServiceCardsProps) {
           <h2 className="text-h2 mb-4 text-dark-700">
             Maßgeschneidert für Ihren Erfolg
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="text-body-lg text-dark-500 max-w-2xl mx-auto">
             Wählen Sie das Paket, das am besten zu Ihren Bedürfnissen passt
           </p>
         </div>
@@ -40,9 +40,9 @@ export default function ServiceCards({ services }: ServiceCardsProps) {
             >
               <CardHeader>
                 <div className="w-full aspect-video bg-gradient-to-br from-primary-100 to-primary-200 rounded-lg mb-4 flex items-center justify-center">
-                  <span className="text-gray-400 text-sm">Paket Icon</span>
+                  <span className="text-dark-300 text-sm">Paket Icon</span>
                 </div>
-                <CardTitle className="text-2xl">{service.title}</CardTitle>
+                <CardTitle className="text-h3 text-dark-700">{service.title}</CardTitle>
                 <CardDescription className="text-xl font-semibold mt-2 text-accent-400">
                   {service.price}
                 </CardDescription>
@@ -52,7 +52,7 @@ export default function ServiceCards({ services }: ServiceCardsProps) {
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-2">
                       <Check className="w-5 h-5 flex-shrink-0 mt-0.5 text-accent-400" />
-                      <span className="text-sm text-gray-700">{feature}</span>
+                      <span className="text-body text-dark-600">{feature}</span>
                     </li>
                   ))}
                 </ul>

@@ -6,8 +6,9 @@ import Footer from "@/components/layout/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-inter",
   weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-inter",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -24,8 +25,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de">
-      <body className={`${inter.variable} font-sans antialiased`}>
+    <html lang="de" className={inter.variable}>
+      <body className="font-sans antialiased">
         <Header />
         <main>{children}</main>
         <Footer />

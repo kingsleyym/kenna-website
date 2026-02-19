@@ -12,6 +12,14 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-inter)", "sans-serif"],
       },
+      fontSize: {
+        "h1-hero": ["72px", { lineHeight: "1.1", fontWeight: "300" }],
+        h1: ["48px", { lineHeight: "1.2", fontWeight: "500" }],
+        h2: ["36px", { lineHeight: "1.3", fontWeight: "500" }],
+        h3: ["28px", { lineHeight: "1.4", fontWeight: "500" }],
+        "body-lg": ["18px", { lineHeight: "1.7", fontWeight: "400" }],
+        body: ["16px", { lineHeight: "1.7", fontWeight: "400" }],
+      },
       colors: {
         primary: {
           "50": "rgb(var(--kenna-primary-50))",

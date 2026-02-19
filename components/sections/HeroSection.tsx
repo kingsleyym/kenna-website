@@ -75,7 +75,7 @@ export default function HeroSection({
           {headline}
         </h1>
         {subheadline && (
-          <p className="text-body text-dark-500 mb-10 max-w-3xl mx-auto">
+          <p className="text-body-lg text-dark-500 mb-10 max-w-3xl mx-auto">
             {subheadline}
           </p>
         )}

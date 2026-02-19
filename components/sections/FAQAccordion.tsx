@@ -19,19 +19,19 @@ export default function FAQAccordion({ faqs }: FAQAccordionProps) {
   return (
     <section className="py-16 md:py-24 bg-white">
       <Container maxWidth="md">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-center mb-12 text-gray-900">
+        <h2 className="text-h2 text-center mb-12 text-dark-700">
           Häufige Fragen
         </h2>
-        <p className="text-center text-gray-600 mb-12 text-lg">
+        <p className="text-center text-body-lg text-dark-500 mb-12">
           Antworten hinter den Kulissen
         </p>
         <Accordion type="single" collapsible className="w-full">
           {faqs.map((faq, index) => (
             <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="text-left text-lg font-medium">
+              <AccordionTrigger className="text-left text-body-lg font-medium text-dark-700">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-gray-600 text-base leading-relaxed">
+              <AccordionContent className="text-body text-dark-500 leading-relaxed">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>

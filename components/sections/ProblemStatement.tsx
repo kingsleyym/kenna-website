@@ -5,14 +5,14 @@ export default function ProblemStatement() {
     <section className="py-16 md:py-24 bg-white">
       <Container maxWidth="md">
         <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-medium mb-6 text-gray-900">
+          <h2 className="text-h2 text-dark-700 mb-6">
             Hausverkauf ohne Makler – aber mit System
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-6">
+          <p className="text-body-lg text-dark-500 mb-6">
             Viele Privatverkäufer wollen die hohe Maklerprovision sparen, wissen aber nicht, wie sie ihre Immobilie professionell präsentieren sollen.
           </p>
-          <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-            <strong className="text-gray-900">Kenna</strong> bietet Ihnen die Lösung: Professionelle Visualisierung, Vermarktungsstrategie und Begleitung – ohne die klassische Maklerprovision.
+          <p className="text-body-lg text-dark-500 leading-relaxed">
+            <strong className="text-dark-700">Kenna</strong> bietet Ihnen die Lösung: Professionelle Visualisierung, Vermarktungsstrategie und Begleitung – ohne die klassische Maklerprovision.
           </p>
         </div>
       </Container>
