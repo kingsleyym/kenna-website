@@ -11,7 +11,7 @@ interface FloatingImageProps {
     bottom?: string;
   };
   size?: 'sm' | 'md' | 'lg';
-  speed?: 'normal' | 'slow';
+  speed?: 'normal' | 'slow' | 'fast';
 }
 
 export function FloatingImage({ 
@@ -23,12 +23,14 @@ export function FloatingImage({
   speed = 'normal'
 }: FloatingImageProps) {
   const sizeClasses = {
-    sm: 'w-24 h-24 md:w-32 md:h-32',
-    md: 'w-32 h-32 md:w-48 md:h-48',
-    lg: 'w-40 h-40 md:w-64 md:h-64'
+    sm: 'w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48',
+    md: 'w-40 h-40 md:w-56 md:h-56 lg:w-64 lg:h-64',
+    lg: 'w-48 h-48 md:w-72 md:h-72 lg:w-80 lg:h-80'
   };
 
-  const animationClass = speed === 'slow' ? 'animate-float-slow' : 'animate-float';
+  const animationClass = speed === 'slow' ? 'animate-float-slow' : 
+                         speed === 'fast' ? 'animate-float-fast' : 
+                         'animate-float';
 
   return (
     <div 
