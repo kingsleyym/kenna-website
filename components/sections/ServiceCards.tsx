@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check } from "lucide-react";
+import { Camera, FileText, Award, Check } from "lucide-react";
 import Link from "next/link";
 import Container from "@/components/layout/Container";
 
@@ -16,6 +15,9 @@ interface ServiceCardsProps {
   services: Service[];
 }
 
+// Icon mapping for each service (Basis, Premium, Professional)
+const serviceIcons = [FileText, Camera, Award];
+
 export default function ServiceCards({ services }: ServiceCardsProps) {
   return (
     <section className="py-24 md:py-32 bg-primary-50">
@@ -29,43 +31,66 @@ export default function ServiceCards({ services }: ServiceCardsProps) {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-          {services.map((service, index) => (
-            <Card 
-              key={service.id} 
-              className={`flex flex-col transition-all duration-300 hover:scale-105 hover:shadow-2xl ${
-                index === 1 
-                  ? 'border-2 border-accent-400 shadow-xl bg-white/90 backdrop-blur-sm' 
-                  : 'bg-white/80 backdrop-blur-sm border border-primary-200'
-              }`}
-            >
-              <CardHeader>
-                <div className="w-full aspect-video bg-gradient-to-br from-primary-100 to-primary-200 rounded-lg mb-4 flex items-center justify-center">
-                  <span className="text-dark-300 text-sm">Paket Icon</span>
+          {services.map((service, index) => {
+            const Icon = serviceIcons[index] || FileText;
+            const isPremium = index === 1;
+            
+            return (
+              <div
+                key={service.id}
+                className={`
+                  bg-primary-50
+                  rounded-3xl
+                  shadow-2xl
+                  p-8 md:p-12
+                  transition-all
+                  duration-300
+                  hover:scale-105
+                  hover:shadow-[0_20px_60px_-12px_rgba(0,0,0,0.25)]
+                  flex flex-col
+                  ${isPremium ? 'ring-2 ring-accent-400 ring-offset-4' : ''}
+                `}
+              >
+                {/* Icon/Badge at top */}
+                <div className="mb-6">
+                  <div className="w-16 h-16 bg-accent-400/10 rounded-2xl flex items-center justify-center">
+                    <Icon className="w-8 h-8 text-accent-400" />
+                  </div>
                 </div>
-                <CardTitle className="text-h3 text-dark-700">{service.title}</CardTitle>
-                <CardDescription className="text-xl font-semibold mt-2 text-accent-400">
+
+                {/* Title */}
+                <h3 className="text-2xl md:text-3xl font-semibold text-dark-700 mb-4 tracking-tight">
+                  {service.title}
+                </h3>
+
+                {/* Price */}
+                <p className="text-xl font-semibold text-accent-400 mb-6">
                   {service.price}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="flex-1">
-                <ul className="space-y-3">
+                </p>
+
+                {/* Features list */}
+                <ul className="space-y-3 mb-8 flex-1">
                   {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <Check className="w-5 h-5 flex-shrink-0 mt-0.5 text-accent-400" />
-                      <span className="text-body text-dark-600">{feature}</span>
+                    <li key={idx} className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-accent-400 mt-1 flex-shrink-0" />
+                      <span className="text-dark-600 leading-relaxed">{feature}</span>
                     </li>
                   ))}
                 </ul>
-              </CardContent>
-              <CardFooter>
+
+                {/* CTA Button */}
                 <Link href={service.href} className="w-full">
-                  <Button variant={index === 1 ? "default" : "outline"} className="w-full">
+                  <Button 
+                    variant={isPremium ? "default" : "outline"} 
+                    size="lg"
+                    className="w-full"
+                  >
                     Mehr erfahren
                   </Button>
                 </Link>
-              </CardFooter>
-            </Card>
-          ))}
+              </div>
+            );
+          })}
         </div>
       </Container>
     </section>
