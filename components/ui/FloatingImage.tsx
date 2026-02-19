@@ -56,10 +56,12 @@ export function FloatingImage({
   return (
     <div 
       ref={ref}
-      className={`absolute ${sizeClasses[size]} ${animationClass} hidden md:block`}
+      className={`absolute ${sizeClasses[size]} ${animationClass}`}
       style={{ 
         ...position,
-        transform: `translateY(-${offset}px)`, // MINUS = move UP (disappear UNDER blur)
+        transform: position.transform 
+          ? `${position.transform} translateY(-${offset}px)` 
+          : `translateY(-${offset}px)`, // MINUS = move UP (disappear UNDER blur)
         transition: 'transform 0.1s ease-out',
         animationDelay: `${delay}s`,
         zIndex

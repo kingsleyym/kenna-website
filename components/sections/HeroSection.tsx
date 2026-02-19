@@ -19,22 +19,24 @@ export default function HeroSection({
   ctaSecondary,
 }: HeroSectionProps) {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-24 md:py-32 bg-primary-100">
+    <section className="relative min-h-screen flex items-center justify-center overflow-x-hidden py-24 md:py-32 bg-primary-100">
       
       {/* Floating Images + Testimonials (DAHINTER + DAVOR) */}
       <div className="absolute inset-0 z-0">
         
-        {/* CENTER IMAGE - IMMER sichtbar (auch auf Tiny Mobile < 640px) */}
-        <FloatingImage 
-          src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&h=900&fit=crop" 
-          alt="Beautiful Property"
-          position={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
-          size="xl"
-          delay={0}
-          speed="slow"
-          parallaxSpeed={0.2}
-          zIndex={-1}
-        />
+        {/* CENTER IMAGE - NUR auf Tiny Mobile (< 640px) */}
+        <div className="block sm:hidden">
+          <FloatingImage 
+            src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&h=900&fit=crop" 
+            alt="Beautiful Property"
+            position={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
+            size="xl"
+            delay={0}
+            speed="slow"
+            parallaxSpeed={0.2}
+            zIndex={-1}
+          />
+        </div>
         
         {/* IMAGE 1 - Top (sichtbar ab sm = 640px+) */}
         <div className="hidden sm:block">
