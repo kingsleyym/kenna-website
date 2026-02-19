@@ -24,152 +24,120 @@ export default function HeroSection({
       {/* Floating Images + Testimonials (DAHINTER + DAVOR) */}
       <div className="absolute inset-0 z-0">
         
-        {/* DESKTOP: 6 images in circle + 1 center behind blur */}
-        <div className="hidden md:block">
-          {/* Top (12 o'clock) */}
+        {/* CENTER IMAGE - IMMER sichtbar (auch auf Tiny Mobile < 640px) */}
+        <FloatingImage 
+          src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&h=900&fit=crop" 
+          alt="Beautiful Property"
+          position={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
+          size="xl"
+          delay={0}
+          speed="slow"
+          parallaxSpeed={0.2}
+          zIndex={-1}
+        />
+        
+        {/* IMAGE 1 - Top (sichtbar ab sm = 640px+) */}
+        <div className="hidden sm:block">
           <FloatingImage 
             src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop" 
             alt="Modern House"
-            position={{ top: '5%', left: '50%', transform: 'translateX(-50%)' }}
+            position={{ top: '10%', left: '50%', transform: 'translateX(-50%)' }}
             size="md"
             delay={0}
             speed="slow"
             parallaxSpeed={0.3}
           />
-          
-          {/* Top-Right (2 o'clock) */}
+        </div>
+        
+        {/* IMAGE 2 - Right (sichtbar ab sm = 640px+) */}
+        <div className="hidden sm:block">
           <FloatingImage 
             src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop" 
             alt="Luxury Interior"
-            position={{ top: '15%', right: '10%' }}
+            position={{ top: '50%', right: '8%', transform: 'translateY(-50%)' }}
             size="sm"
             delay={2}
             speed="normal"
             parallaxSpeed={0.5}
           />
-          
-          {/* Bottom-Right (4 o'clock) */}
+        </div>
+        
+        {/* IMAGE 3 - Bottom (sichtbar ab md = 768px+) */}
+        <div className="hidden md:block">
           <FloatingImage 
             src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1000&h=750&fit=crop" 
             alt="Real Estate Property"
-            position={{ bottom: '15%', right: '10%' }}
+            position={{ bottom: '10%', left: '50%', transform: 'translateX(-50%)' }}
             size="lg"
             delay={4}
             speed="fast"
             parallaxSpeed={0.4}
           />
-          
-          {/* Bottom (6 o'clock) */}
+        </div>
+        
+        {/* IMAGE 4 - Left (sichtbar ab md = 768px+) */}
+        <div className="hidden md:block">
           <FloatingImage 
             src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800&h=600&fit=crop" 
             alt="Apartment View"
-            position={{ bottom: '5%', left: '50%', transform: 'translateX(-50%)' }}
-            size="md"
+            position={{ top: '50%', left: '8%', transform: 'translateY(-50%)' }}
+            size="sm"
             delay={3}
             speed="slow"
-            parallaxSpeed={0.3}
+            parallaxSpeed={0.4}
           />
-          
-          {/* Bottom-Left (8 o'clock) */}
+        </div>
+        
+        {/* IMAGE 5 - Top-Right (sichtbar ab lg = 1024px+) */}
+        <div className="hidden lg:block">
           <FloatingImage 
             src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop" 
-            alt="Cozy Living Room"
-            position={{ bottom: '15%', left: '10%' }}
-            size="sm"
+            alt="Top Right Property"
+            position={{ top: '15%', right: '10%' }}
+            size="md"
             delay={1}
             speed="normal"
             parallaxSpeed={0.5}
           />
-          
-          {/* Top-Left (10 o'clock) */}
+        </div>
+        
+        {/* IMAGE 6 - Bottom-Left (sichtbar ab xl = 1280px+) */}
+        <div className="hidden xl:block">
           <FloatingImage 
             src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1000&h=750&fit=crop" 
-            alt="Elegant Home"
-            position={{ top: '15%', left: '10%' }}
+            alt="Bottom Left Property"
+            position={{ bottom: '15%', left: '10%' }}
             size="lg"
             delay={5}
             speed="fast"
             parallaxSpeed={0.4}
           />
-          
-          {/* CENTER BEHIND BLUR (z-index -1, größtes Bild) */}
-          <FloatingImage 
-            src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&h=900&fit=crop" 
-            alt="Beautiful Property"
-            position={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
-            size="xl"
-            delay={0}
-            speed="slow"
-            parallaxSpeed={0.2}
-            zIndex={-1}
-          />
         </div>
         
-        {/* MOBILE: 4 images closer to center (smaller circle) */}
-        <div className="block md:hidden">
-          {/* Top */}
+        {/* IMAGE 7 - Top-Left (sichtbar ab 2xl = 1536px+) */}
+        <div className="hidden 2xl:block">
           <FloatingImage 
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop" 
-            alt="Modern House"
-            position={{ top: '10%', left: '50%', transform: 'translateX(-50%)' }}
-            size="sm"
-            delay={0}
+            src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop" 
+            alt="Top Left Property"
+            position={{ top: '15%', left: '10%' }}
+            size="md"
+            delay={6}
             speed="slow"
             parallaxSpeed={0.3}
           />
-          
-          {/* Right */}
-          <FloatingImage 
-            src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop" 
-            alt="Luxury Interior"
-            position={{ top: '50%', right: '5%', transform: 'translateY(-50%)' }}
-            size="sm"
-            delay={2}
-            speed="normal"
-            parallaxSpeed={0.4}
-          />
-          
-          {/* Bottom */}
-          <FloatingImage 
-            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1000&h=750&fit=crop" 
-            alt="Real Estate Property"
-            position={{ bottom: '10%', left: '50%', transform: 'translateX(-50%)' }}
-            size="sm"
-            delay={4}
-            speed="fast"
-            parallaxSpeed={0.3}
-          />
-          
-          {/* Left */}
-          <FloatingImage 
-            src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800&h=600&fit=crop" 
-            alt="Apartment View"
-            position={{ top: '50%', left: '5%', transform: 'translateY(-50%)' }}
-            size="sm"
-            delay={3}
-            speed="slow"
-            parallaxSpeed={0.4}
-          />
         </div>
         
-        {/* DESKTOP: All 4 Testimonials */}
+        {/* TESTIMONIAL 1 - Immer sichtbar */}
+        <TestimonialBubble 
+          text="12 fotos hochgeladen"
+          position={{ top: '20%', right: '5%' }}
+          icon={<Camera className="w-3 h-3 sm:w-4 sm:h-4" />}
+          delay={1}
+          parallaxSpeed={0.3}
+        />
+        
+        {/* TESTIMONIAL 2 - Ab sm sichtbar (640px+) */}
         <div className="hidden sm:block">
-          <TestimonialBubble 
-            text="12 fotos hochgeladen"
-            position={{ top: '20%', right: '10%' }}
-            icon={<Camera className="w-4 h-4" />}
-            delay={1}
-            parallaxSpeed={0.3}
-          />
-          
-          <TestimonialBubble 
-            text="Entdecke uns 1:32"
-            position={{ bottom: '30%', right: '15%' }}
-            icon={<Play className="w-4 h-4" />}
-            delay={4}
-            parallaxSpeed={0.4}
-          />
-          
           <TestimonialBubble 
             text="In 5 Minuten online"
             position={{ top: '30%', left: '10%' }}
@@ -177,7 +145,10 @@ export default function HeroSection({
             delay={2}
             parallaxSpeed={0.35}
           />
-          
+        </div>
+        
+        {/* TESTIMONIAL 3 - Ab md sichtbar (768px+) */}
+        <div className="hidden md:block">
           <TestimonialBubble 
             text="Maximaler Preis"
             position={{ bottom: '20%', left: '15%' }}
@@ -187,24 +158,17 @@ export default function HeroSection({
           />
         </div>
         
-        {/* MOBILE: Only 2 Testimonials */}
-        <div className="block sm:hidden">
+        {/* TESTIMONIAL 4 - Ab lg sichtbar (1024px+) */}
+        <div className="hidden lg:block">
           <TestimonialBubble 
-            text="12 fotos hochgeladen"
-            position={{ top: '20%', right: '5%' }}
-            icon={<Camera className="w-3 h-3" />}
-            delay={1}
-            parallaxSpeed={0.3}
-          />
-          
-          <TestimonialBubble 
-            text="Entdecke uns"
-            position={{ bottom: '20%', left: '5%' }}
-            icon={<Play className="w-3 h-3" />}
-            delay={3}
+            text="Entdecke uns 1:32"
+            position={{ bottom: '30%', right: '15%' }}
+            icon={<Play className="w-4 h-4" />}
+            delay={4}
             parallaxSpeed={0.4}
           />
         </div>
+        
       </div>
       
       {/* Glasmorphism Card - RESPONSIVE! */}
