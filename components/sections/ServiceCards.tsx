@@ -59,7 +59,7 @@ export default function ServiceCards({ services }: ServiceCardsProps) {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl md:text-3xl font-semibold text-dark-700 mb-4 tracking-tight">
+                <h3 className="text-xl md:text-2xl font-semibold text-dark-700 mb-4 tracking-tight">
                   {service.title}
                 </h3>
 

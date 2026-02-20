@@ -4,7 +4,7 @@ export default function MissionStatement() {
       <div className="container max-w-6xl mx-auto px-6">
         {/* Main Headline - Mixed Color Style */}
         <div className="text-center mb-16 md:mb-20">
-          <h2 className="text-5xl md:text-6xl font-bold leading-tight mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold leading-tight mb-4">
             <span className="text-accent-400">Mehr Fairness,</span>{" "}
             <span className="text-accent-400">mehr Transparenz,</span>
             <br />
@@ -16,7 +16,7 @@ export default function MissionStatement() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 mb-16">
           {/* Block 1: DEKRA */}
           <div className="border-l-4 border-accent-400 pl-6">
-            <h3 className="text-3xl md:text-4xl font-bold text-accent-400 mb-4">
+            <h3 className="text-xl md:text-2xl font-bold text-accent-400 mb-4">
               DEKRA-zertifiziert
             </h3>
             <p className="text-base text-gray-700 leading-relaxed">
@@ -28,7 +28,7 @@ export default function MissionStatement() {
 
           {/* Block 2: Expertise */}
           <div className="border-l-4 border-accent-400 pl-6">
-            <h3 className="text-3xl md:text-4xl font-bold text-accent-400 mb-4">
+            <h3 className="text-xl md:text-2xl font-bold text-accent-400 mb-4">
               Ihre Expertise zählt
             </h3>
             <p className="text-base text-gray-700 leading-relaxed">
@@ -39,7 +39,7 @@ export default function MissionStatement() {
 
           {/* Block 3: Gemeinsam */}
           <div className="border-l-4 border-accent-400 pl-6">
-            <h3 className="text-3xl md:text-4xl font-bold text-accent-400 mb-4">
+            <h3 className="text-xl md:text-2xl font-bold text-accent-400 mb-4">
               Gemeinsam zum Ziel
             </h3>
             <p className="text-base text-gray-700 leading-relaxed">
