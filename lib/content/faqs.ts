@@ -5,33 +5,38 @@ export interface FAQ {
 
 export const faqs: FAQ[] = [
   {
-    question: "Was unterscheidet Kenna von einem klassischen Makler?",
+    question: "Wie funktioniert der Verkauf über Kenna?",
     answer:
-      "Kenna kombiniert professionelle Immobilienpräsentation mit modernen Technologien und transparenten Kosten. Sie behalten die Kontrolle über Besichtigungen und Verhandlungen, während wir die Vermarktung übernehmen – ohne versteckte Provisionen.",
+      "Sie listen Ihre Immobilie auf unserer Plattform, wir übernehmen Marketing, Besichtigungen und die komplette Vertragsabwicklung. Sie behalten die Kontrolle, während wir uns um alle Details kümmern.",
   },
   {
-    question: "Wie läuft die Zusammenarbeit ab?",
+    question: "Wie viel kostet der Service?",
     answer:
-      "Nach einem kostenlosen Erstgespräch analysieren wir Ihre Immobilie und erstellen eine individuelle Strategie. Dann folgen Fotografie, Exposé-Erstellung und Veröffentlichung. Sie führen die Besichtigungen durch, wir unterstützen Sie bei allen Fragen bis zum Notartermin.",
+      "Wir bieten transparente Fixpreise ab 3.999€ – keine versteckten Provisionen. Im Vergleich zu klassischen Maklern (3,57% + MwSt.) sparen Sie tausende Euro.",
   },
   {
-    question: "Welche Unterlagen benötigen Sie von mir?",
+    question: "Wie viel spare ich im Vergleich zum Makler?",
     answer:
-      "Grundriss, Energieausweis, Baupläne (falls vorhanden), aktuelle Fotos und Informationen zu Renovierungen oder Besonderheiten der Immobilie.",
+      "Bei einem Haus für 500.000€ sparen Sie ca. 17.000€ gegenüber der klassischen Maklerprovision. Je höher der Verkaufspreis, desto größer Ihre Ersparnis.",
   },
   {
-    question: "Kann ich die Besichtigungen selbst durchführen?",
+    question: "Übernehmen Sie auch Besichtigungen?",
     answer:
-      "Ja! Das ist sogar ein Vorteil. Niemand kennt Ihre Immobilie besser als Sie. Wir unterstützen Sie mit Tipps und Schulungen, damit Sie Interessenten professionell empfangen können.",
+      "Ja, wir koordinieren und begleiten alle Besichtigungstermine. Sie können selbst entscheiden, ob Sie dabei sein möchten oder ob wir die Termine vollständig übernehmen.",
   },
   {
     question: "Wie lange dauert der Verkaufsprozess?",
     answer:
-      "Das hängt von Ihrer Immobilie, dem Markt und Ihren Erwartungen ab. Im Schnitt dauert ein Verkauf 3-6 Monate. Mit professioneller Präsentation und gezieltem Marketing können wir diese Zeit oft verkürzen.",
+      "Durchschnittlich 8-12 Wochen vom Listing bis zur Vertragsunterzeichnung. Mit professionellem Marketing und gezielter Käuferansprache können wir diese Zeit oft verkürzen.",
   },
   {
-    question: "Was kostet der Service?",
+    question: "Welche Dokumente benötige ich?",
     answer:
-      "Wir bieten drei Pakete an: Kurzfilm (750€), Großes Kino (1.5k/Monat + MwSt. vom Verkaufspreis) und Blockbuster (individuell). Alle Preise sind transparent und ohne versteckte Kosten.",
+      "Grundbuchauszug, Energieausweis, Baupläne (falls vorhanden) und Grundrisse. Wir helfen Ihnen bei der Beschaffung fehlender Unterlagen.",
+  },
+  {
+    question: "Kann ich den Verkauf jederzeit abbrechen?",
+    answer:
+      "Ja, Sie haben volle Kontrolle über den Prozess. Sie können jederzeit pausieren oder abbrechen – ohne versteckte Kosten oder Verpflichtungen.",
   },
 ];
