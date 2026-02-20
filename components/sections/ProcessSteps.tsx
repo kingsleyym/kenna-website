@@ -96,9 +96,12 @@ export default function ProcessSteps({ steps }: ProcessStepsProps) {
           <div className="space-y-8">
             {steps.map((step) => (
               <div key={step.number} className="flex gap-4">
-                {/* Orange Circle */}
+                {/* Orange Circle — FIX 1 */}
                 <div className="flex-shrink-0">
-                  <div className="w-10 h-10 rounded-full bg-accent-400 text-white flex items-center justify-center font-bold text-lg">
+                  <div
+                    className="w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg text-white shadow-md"
+                    style={{ backgroundColor: "rgb(255, 107, 107)" }}
+                  >
                     {step.number}
                   </div>
                 </div>
@@ -125,7 +128,7 @@ export default function ProcessSteps({ steps }: ProcessStepsProps) {
         {/* DESKTOP: 2-Column Layout with Scroll Magic */}
         <div className="hidden lg:grid lg:grid-cols-[60%_40%] gap-12">
           {/* LEFT: Sticky Header + Scrolling Steps */}
-          <div>
+          <div className="relative">
             {/* Sticky Header */}
             <div className="sticky top-44 z-10 mb-12">
               <h2 className="text-2xl md:text-3xl font-bold text-dark-700 mb-4">
@@ -138,7 +141,7 @@ export default function ProcessSteps({ steps }: ProcessStepsProps) {
               </p>
             </div>
 
-            {/* Steps in Groups (for scroll observation) */}
+            {/* Scroll Trigger Areas (invisible) */}
             <div className="space-y-24">
               {stepGroups.map((group, groupIndex) => (
                 <div
@@ -147,25 +150,36 @@ export default function ProcessSteps({ steps }: ProcessStepsProps) {
                     groupRefs.current[groupIndex] = el;
                   }}
                   className="min-h-[600px]"
+                />
+              ))}
+            </div>
+
+            {/* Sticky Steps (bottom-left) — FIX 2 */}
+            <div className="sticky bottom-8 left-0 z-20 pointer-events-none">
+              {stepGroups.map((group, groupIndex) => (
+                <div
+                  key={groupIndex}
+                  className={`transition-all duration-700 ease-in-out ${
+                    activeGroupIndex === groupIndex
+                      ? "opacity-100 blur-0 relative"
+                      : "opacity-0 blur-md absolute inset-0"
+                  }`}
                 >
-                  <div
-                    className={`space-y-12 transition-all duration-700 ease-in-out ${
-                      activeGroupIndex === groupIndex
-                        ? "opacity-100 blur-0"
-                        : "opacity-0 blur-md pointer-events-none"
-                    }`}
-                  >
+                  <div className="space-y-8">
                     {group.map((step) => (
-                      <div key={step.number} className="flex gap-6">
-                        {/* Orange Circle */}
+                      <div key={step.number} className="flex gap-6 items-start">
+                        {/* Orange Circle — FIX 1 */}
                         <div className="flex-shrink-0">
-                          <div className="w-12 h-12 rounded-full bg-accent-400 text-white flex items-center justify-center font-bold text-xl">
+                          <div
+                            className="w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl text-white shadow-lg"
+                            style={{ backgroundColor: "rgb(255, 107, 107)" }}
+                          >
                             {step.number}
                           </div>
                         </div>
 
                         {/* Content */}
-                        <div className="flex-1">
+                        <div className="flex-1 pointer-events-auto">
                           <h3 className="text-xl md:text-2xl font-semibold text-dark-700 mb-3">
                             {step.title}
                           </h3>
@@ -186,11 +200,12 @@ export default function ProcessSteps({ steps }: ProcessStepsProps) {
             </div>
           </div>
 
-          {/* RIGHT: Fixed Container with Switching Images */}
+          {/* RIGHT: Fixed Container with Switching Images — FIX 3 */}
           <div className="sticky top-44 h-[600px]">
-            <div className="relative w-full h-full flex flex-col gap-4">
-              {/* Top Image (smaller, 28% height) */}
-              <div className="relative w-full h-[28%] rounded-2xl overflow-hidden shadow-lg">
+            {/* Hellgrauer Container mit Border + Padding */}
+            <div className="bg-gray-100 border-2 border-gray-200 rounded-lg p-4 h-full flex flex-col gap-4">
+              {/* Top Image (kleiner) */}
+              <div className="relative w-full h-[30%] rounded-lg overflow-hidden shadow-md">
                 <img
                   src={defaultImages[topImageIndex] || defaultImages[0]}
                   alt={`Step ${activeGroupIndex * 2 + 1}`}
@@ -199,8 +214,8 @@ export default function ProcessSteps({ steps }: ProcessStepsProps) {
                 />
               </div>
 
-              {/* Bottom Image (larger, 68% height) */}
-              <div className="relative w-full h-[68%] rounded-2xl overflow-hidden shadow-xl">
+              {/* Bottom Image (größer) */}
+              <div className="relative w-full flex-1 rounded-lg overflow-hidden shadow-lg">
                 <img
                   src={defaultImages[bottomImageIndex] || defaultImages[1]}
                   alt={`Step ${activeGroupIndex * 2 + 1} detail`}
