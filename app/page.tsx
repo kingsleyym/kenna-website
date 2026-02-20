@@ -4,7 +4,10 @@ import ProblemStatement from "@/components/sections/ProblemStatement";
 import MissionStatement from "@/components/sections/MissionStatement";
 import ProcessSteps from "@/components/sections/ProcessSteps";
 import ServiceCards from "@/components/sections/ServiceCards";
+import PricingComparison from "@/components/sections/PricingComparison";
+import Calculator from "@/components/sections/Calculator";
 import FAQAccordion from "@/components/sections/FAQAccordion";
+import BlogPreview from "@/components/sections/BlogPreview";
 import FinalCTA from "@/components/sections/FinalCTA";
 import { services } from "@/lib/content/services";
 import { processSteps } from "@/lib/content/process";
@@ -39,222 +42,17 @@ export default function HomePage() {
         </div>
       
       
-      {/* Pricing Table Section */}
-      
-        <section className="py-24 md:py-32 bg-white">
-        <div className="container max-w-6xl mx-auto px-6">
-          <h2 className="text-h2 text-dark-700 text-center mb-4">
-            Pakete im direkten Vergleich
-          </h2>
-          <p className="text-body text-dark-500 text-center mb-12 max-w-2xl mx-auto">
-            Alle Leistungen auf einen Blick – finden Sie das passende Paket für Ihre Bedürfnisse
-          </p>
-          
-          {/* Desktop: Table, Mobile: Stacked */}
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse bg-white rounded-2xl shadow-lg overflow-hidden">
-              <thead>
-                <tr className="bg-dark-700 text-white">
-                  <th className="px-6 py-4 text-left font-semibold">Leistung</th>
-                  <th className="px-6 py-4 text-center font-semibold">Kurzfilm<br/><span className="text-sm font-normal text-gray-300">750€</span></th>
-                  <th className="px-6 py-4 text-center font-semibold bg-accent-400">Großes Kino<br/><span className="text-sm font-normal text-white/80">1.500€</span></th>
-                  <th className="px-6 py-4 text-center font-semibold">Blockbuster<br/><span className="text-sm font-normal text-gray-300">Auf Anfrage</span></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-b border-gray-200">
-                  <td className="px-6 py-3 font-medium">Professionelle Fotos</td>
-                  <td className="px-6 py-3 text-center text-green-600">✓</td>
-                  <td className="px-6 py-3 text-center text-green-600 bg-accent-50">✓</td>
-                  <td className="px-6 py-3 text-center text-green-600">✓</td>
-                </tr>
-                <tr className="border-b border-gray-200">
-                  <td className="px-6 py-3 font-medium">360° Virtuelle Tour</td>
-                  <td className="px-6 py-3 text-center text-gray-400">—</td>
-                  <td className="px-6 py-3 text-center text-green-600 bg-accent-50">✓</td>
-                  <td className="px-6 py-3 text-center text-green-600">✓</td>
-                </tr>
-                <tr className="border-b border-gray-200">
-                  <td className="px-6 py-3 font-medium">Drohnenaufnahmen</td>
-                  <td className="px-6 py-3 text-center text-gray-400">—</td>
-                  <td className="px-6 py-3 text-center text-green-600 bg-accent-50">✓</td>
-                  <td className="px-6 py-3 text-center text-green-600">✓ Erweitert</td>
-                </tr>
-                <tr className="border-b border-gray-200">
-                  <td className="px-6 py-3 font-medium">Digitales Homestaging</td>
-                  <td className="px-6 py-3 text-center text-gray-400">—</td>
-                  <td className="px-6 py-3 text-center text-gray-400 bg-accent-50">—</td>
-                  <td className="px-6 py-3 text-center text-green-600">✓</td>
-                </tr>
-                <tr className="border-b border-gray-200">
-                  <td className="px-6 py-3 font-medium">Exposé-Erstellung</td>
-                  <td className="px-6 py-3 text-center text-green-600">✓</td>
-                  <td className="px-6 py-3 text-center text-green-600 bg-accent-50">✓ Premium</td>
-                  <td className="px-6 py-3 text-center text-green-600">✓ Premium</td>
-                </tr>
-                <tr className="border-b border-gray-200">
-                  <td className="px-6 py-3 font-medium">Portal-Veröffentlichung</td>
-                  <td className="px-6 py-3 text-center text-gray-400">Optional</td>
-                  <td className="px-6 py-3 text-center text-green-600 bg-accent-50">✓</td>
-                  <td className="px-6 py-3 text-center text-green-600">✓</td>
-                </tr>
-                <tr className="border-b border-gray-200">
-                  <td className="px-6 py-3 font-medium">Persönliche Beratung</td>
-                  <td className="px-6 py-3 text-center text-green-600">1 Termin</td>
-                  <td className="px-6 py-3 text-center text-green-600 bg-accent-50">Laufend</td>
-                  <td className="px-6 py-3 text-center text-green-600">Premium</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          
-          <div className="text-center mt-8">
-            <a 
-              href="/preise" 
-              className="inline-block bg-accent-400 text-white font-semibold px-8 py-3 rounded-full hover:bg-accent-500 transition-colors shadow-lg hover:shadow-xl"
-            >
-              Preise im Detail ansehen
-            </a>
-          </div>
-        </div>
-      </section>
+      <PricingComparison />
       
       
-      {/* Calculator Section */}
-      
-        <section className="py-24 md:py-32 bg-dark-700 text-white">
-        <div className="container max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-h2 text-white mb-4">
-            Berechnen Sie Ihre Ersparnis
-          </h2>
-          <p className="text-body-lg text-gray-300 mb-8">
-            Bei einem Verkaufspreis von 500.000 € sparen Sie mit Kenna bis zu <strong className="text-coral">28.500 €</strong> im Vergleich zu einem klassischen Makler (6% Provision).
-          </p>
-          
-          {/* Placeholder für späteren Calculator */}
-          <div className="bg-charcoal-light rounded-3xl p-8 md:p-12 mb-8">
-            <div className="mb-6">
-              <label className="block text-left mb-2 text-sm font-medium text-gray-300">
-                Geschätzter Verkaufspreis Ihrer Immobilie
-              </label>
-              <div className="bg-white text-charcoal rounded-lg px-4 py-3 text-left">
-                <span className="text-h3 text-dark-700">500.000 €</span>
-              </div>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              <div className="bg-red-500/10 border-2 border-red-500 rounded-xl p-4">
-                <div className="text-sm text-gray-300 mb-1">Klassischer Makler (6%)</div>
-                <div className="text-h2 text-red-400">30.000 €</div>
-              </div>
-              
-              <div className="bg-green-500/10 border-2 border-green-500 rounded-xl p-4">
-                <div className="text-sm text-gray-300 mb-1">Kenna (Großes Kino)</div>
-                <div className="text-h2 text-green-400">1.500 €</div>
-              </div>
-            </div>
-            
-            <div className="bg-gradient-to-r from-accent-400 to-accent-300 rounded-xl p-4">
-              <div className="text-sm mb-1">Ihre Ersparnis</div>
-              <div className="text-h1 text-white">28.500 €</div>
-            </div>
-          </div>
-          
-          <p className="text-gray-400 text-sm mb-6">
-            * Beispielrechnung. Tatsächliche Ersparnis abhängig von Verkaufspreis und gewähltem Paket.
-          </p>
-          
-          <a 
-            href="/preise" 
-            className="inline-block bg-accent-400 text-white font-semibold px-8 py-4 rounded-full hover:bg-accent-300 transition-colors shadow-lg hover:shadow-xl"
-          >
-            Detaillierte Preisübersicht
-          </a>
-        </div>
-      </section>
+      <Calculator />
       
       
       
         <FAQAccordion faqs={faqs} />
       
       
-      {/* Blog Preview Section */}
-      
-        <section className="py-24 md:py-32 bg-white">
-        <div className="container max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-h2 text-dark-700 mb-4">
-              Tipps & Insights
-            </h2>
-            <p className="text-body text-dark-500 max-w-2xl mx-auto">
-              Wertvolle Informationen rund um den erfolgreichen Immobilienverkauf
-            </p>
-          </div>
-          
-          {/* 3 Blog Post Cards (Placeholder) */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-            {/* Card 1 */}
-            <article className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all">
-              <div className="aspect-video bg-gradient-to-br from-accent-300 to-accent-400"></div>
-              <div className="p-6">
-                <div className="text-sm text-dark-500 mb-2">5. Februar 2026</div>
-                <h3 className="text-h3 text-dark-700 mb-3">
-                  10 Fehler beim Immobilienverkauf und wie Sie sie vermeiden
-                </h3>
-                <p className="text-body text-dark-500 mb-4">
-                  Die häufigsten Stolpersteine beim Privatverkauf – und wie Sie mit der richtigen Vorbereitung Zeit und Geld sparen.
-                </p>
-                <a href="/blog" className="text-body text-accent-400 font-medium hover:text-accent-500 transition-colors">
-                  Artikel lesen →
-                </a>
-              </div>
-            </article>
-            
-            {/* Card 2 */}
-            <article className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all">
-              <div className="aspect-video bg-gradient-to-br from-primary-100 to-primary-200"></div>
-              <div className="p-6">
-                <div className="text-sm text-dark-500 mb-2">28. Januar 2026</div>
-                <h3 className="text-h3 text-dark-700 mb-3">
-                  Homestaging: Lohnt sich die Investition?
-                </h3>
-                <p className="text-body text-dark-500 mb-4">
-                  Digitales vs. physisches Homestaging – eine Kosten-Nutzen-Analyse für Privatverkäufer.
-                </p>
-                <a href="/blog" className="text-body text-accent-400 font-medium hover:text-accent-500 transition-colors">
-                  Artikel lesen →
-                </a>
-              </div>
-            </article>
-            
-            {/* Card 3 */}
-            <article className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-all">
-              <div className="aspect-video bg-gradient-to-br from-dark-600 to-dark-700"></div>
-              <div className="p-6">
-                <div className="text-sm text-dark-500 mb-2">15. Januar 2026</div>
-                <h3 className="text-h3 text-dark-700 mb-3">
-                  Der perfekte Verkaufspreis: So ermitteln Sie ihn richtig
-                </h3>
-                <p className="text-body text-dark-500 mb-4">
-                  Marktanalyse, Vergleichswerte und psychologische Preisgestaltung – ein Leitfaden.
-                </p>
-                <a href="/blog" className="text-body text-accent-400 font-medium hover:text-accent-500 transition-colors">
-                  Artikel lesen →
-                </a>
-              </div>
-            </article>
-          </div>
-          
-          <div className="text-center mt-12">
-            <a 
-              href="/blog" 
-              className="inline-block border-2 border-dark-700 text-dark-700 font-semibold px-8 py-3 rounded-full hover:bg-dark-700 hover:text-white transition-all shadow-md hover:shadow-lg"
-            >
-              Alle Artikel ansehen
-            </a>
-          </div>
-        </div>
-      </section>
+      <BlogPreview />
       
       
       
