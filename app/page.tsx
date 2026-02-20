@@ -1,6 +1,7 @@
 import HeroSection from "@/components/sections/HeroSection";
 import DashboardSection from "@/components/sections/DashboardSection";
 import ProblemStatement from "@/components/sections/ProblemStatement";
+import MissionStatement from "@/components/sections/MissionStatement";
 import ProcessSteps from "@/components/sections/ProcessSteps";
 import ServiceCards from "@/components/sections/ServiceCards";
 import FAQAccordion from "@/components/sections/FAQAccordion";
@@ -25,62 +26,7 @@ export default function HomePage() {
         <ProblemStatement />
       
       
-      {/* Mission Statement Section */}
-      
-        <section className="py-24 md:py-32 bg-primary-50">
-        <div className="container max-w-6xl mx-auto px-6">
-          {/* Main Headline */}
-          <h2 className="text-h2 text-dark-700 text-center mb-8">
-            Mehr Fairness, mehr Transparenz, weniger Kosten
-          </h2>
-          
-          {/* 3-Column Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-12">
-            <div className="text-center md:text-left">
-              <h3 className="text-h3 text-accent-400 mb-3">
-                DEKRA-zertifiziert
-              </h3>
-              <p className="text-body text-dark-500">
-                Als DEKRA-zertifizierter Sachverständiger bringe ich professionelle 
-                Expertise und jahrelange Erfahrung mit – ohne die überhöhten Kosten 
-                klassischer Makler.
-              </p>
-            </div>
-            
-            <div className="text-center md:text-left">
-              <h3 className="text-h3 text-accent-400 mb-3">
-                Ihre Expertise zählt
-              </h3>
-              <p className="text-body text-dark-500">
-                Sie kennen Ihre Immobilie besser als jeder Makler. Ich liefere die 
-                technische Unterstützung – Sie behalten die Kontrolle über den Verkauf.
-              </p>
-            </div>
-            
-            <div className="text-center md:text-left">
-              <h3 className="text-h3 text-accent-400 mb-3">
-                Gemeinsam zum Ziel
-              </h3>
-              <p className="text-body text-dark-500">
-                Statt Sie zu ersetzen, unterstütze ich Sie mit modernster Technologie 
-                und professionellem Know-how – als Partner auf Augenhöhe.
-              </p>
-            </div>
-          </div>
-          
-          {/* Secondary Text */}
-          <div className="max-w-3xl mx-auto text-center">
-            <p className="text-h3 text-dark-700 mb-4">
-              Niemand kennt Ihr Zuhause so gut wie Sie selbst.
-            </p>
-            <p className="text-body text-dark-500">
-              Deshalb kombinieren wir Ihre persönliche Expertise mit meiner 
-              technischen Unterstützung – für einen Verkauf, der fair, transparent 
-              und erfolgreich ist.
-            </p>
-          </div>
-        </div>
-      </section>
+      <MissionStatement />
       
       
       
