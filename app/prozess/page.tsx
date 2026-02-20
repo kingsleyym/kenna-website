@@ -178,12 +178,7 @@ export default function ProzessPage() {
       </section>
 
       {/* CTA */}
-      <FinalCTA
-        headline="Lassen Sie uns starten"
-        subheadline="Buchen Sie Ihr kostenloses Erstgespräch und starten Sie Ihren erfolgreichen Verkaufsprozess"
-        ctaText="Erstgespräch vereinbaren"
-        ctaHref="/kontakt"
-      />
+      <FinalCTA />
     </>
   );
 }

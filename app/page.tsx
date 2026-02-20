@@ -258,12 +258,7 @@ export default function HomePage() {
       
       
       
-        <FinalCTA
-          headline="Bereit für den Verkauf?"
-          subheadline="Lassen Sie uns gemeinsam Ihre Immobilie erfolgreich vermarkten"
-          ctaText="Jetzt Kontakt aufnehmen"
-          ctaHref="/kontakt"
-        />
+        <FinalCTA />
       
     </>
   );

@@ -124,12 +124,7 @@ export default function LeistungenPage() {
       </section>
 
       {/* Final CTA */}
-      <FinalCTA
-        headline="Welches Paket passt zu Ihnen?"
-        subheadline="Lassen Sie uns gemeinsam das perfekte Angebot für Ihre Immobilie finden"
-        ctaText="Jetzt beraten lassen"
-        ctaHref="/kontakt"
-      />
+      <FinalCTA />
     </>
   );
 }

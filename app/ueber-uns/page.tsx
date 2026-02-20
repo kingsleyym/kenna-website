@@ -334,12 +334,7 @@ export default function UeberUnsPage() {
       </section>
 
       {/* Final CTA */}
-      <FinalCTA
-        headline="Lernen Sie uns kennen"
-        subheadline="Buchen Sie ein kostenloses Erstgespräch und überzeugen Sie sich selbst von unserer Expertise"
-        ctaText="Jetzt Termin vereinbaren"
-        ctaHref="/kontakt"
-      />
+      <FinalCTA />
     </>
   );
 }

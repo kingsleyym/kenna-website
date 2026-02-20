@@ -243,12 +243,7 @@ export default function PreisePage() {
       </section>
 
       {/* Final CTA */}
-      <FinalCTA
-        headline="Kostenlose Beratung buchen"
-        subheadline="Lassen Sie uns gemeinsam herausfinden, welches Paket optimal für Sie ist"
-        ctaText="Jetzt Beratung vereinbaren"
-        ctaHref="/kontakt"
-      />
+      <FinalCTA />
     </>
   );
 }
