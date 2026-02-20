@@ -127,7 +127,7 @@ export default function ProcessSteps({ steps }: ProcessStepsProps) {
           {/* LEFT: Sticky Header + Scrolling Steps */}
           <div>
             {/* Sticky Header */}
-            <div className="sticky top-24 z-10 mb-12">
+            <div className="sticky top-44 z-10 mb-12">
               <h2 className="text-2xl md:text-3xl font-bold text-dark-700 mb-4">
                 <span className="text-accent-400">7 Schritte</span> zu Ihrem
                 Immobilien-Erfolg
@@ -146,40 +146,48 @@ export default function ProcessSteps({ steps }: ProcessStepsProps) {
                   ref={(el) => {
                     groupRefs.current[groupIndex] = el;
                   }}
-                  className="space-y-12"
+                  className="min-h-[600px]"
                 >
-                  {group.map((step) => (
-                    <div key={step.number} className="flex gap-6">
-                      {/* Orange Circle */}
-                      <div className="flex-shrink-0">
-                        <div className="w-12 h-12 rounded-full bg-accent-400 text-white flex items-center justify-center font-bold text-xl">
-                          {step.number}
+                  <div
+                    className={`space-y-12 transition-all duration-700 ease-in-out ${
+                      activeGroupIndex === groupIndex
+                        ? "opacity-100 blur-0"
+                        : "opacity-0 blur-md pointer-events-none"
+                    }`}
+                  >
+                    {group.map((step) => (
+                      <div key={step.number} className="flex gap-6">
+                        {/* Orange Circle */}
+                        <div className="flex-shrink-0">
+                          <div className="w-12 h-12 rounded-full bg-accent-400 text-white flex items-center justify-center font-bold text-xl">
+                            {step.number}
+                          </div>
+                        </div>
+
+                        {/* Content */}
+                        <div className="flex-1">
+                          <h3 className="text-xl md:text-2xl font-semibold text-dark-700 mb-3">
+                            {step.title}
+                          </h3>
+                          <p className="text-base text-gray-600 leading-relaxed mb-2">
+                            {step.description}
+                          </p>
+                          {step.details && (
+                            <p className="text-sm text-gray-500 italic">
+                              {step.details}
+                            </p>
+                          )}
                         </div>
                       </div>
-
-                      {/* Content */}
-                      <div className="flex-1">
-                        <h3 className="text-xl md:text-2xl font-semibold text-dark-700 mb-3">
-                          {step.title}
-                        </h3>
-                        <p className="text-base text-gray-600 leading-relaxed mb-2">
-                          {step.description}
-                        </p>
-                        {step.details && (
-                          <p className="text-sm text-gray-500 italic">
-                            {step.details}
-                          </p>
-                        )}
-                      </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
           </div>
 
           {/* RIGHT: Fixed Container with Switching Images */}
-          <div className="sticky top-24 h-[600px]">
+          <div className="sticky top-44 h-[600px]">
             <div className="relative w-full h-full flex flex-col gap-4">
               {/* Top Image (smaller, 28% height) */}
               <div className="relative w-full h-[28%] rounded-2xl overflow-hidden shadow-lg">
